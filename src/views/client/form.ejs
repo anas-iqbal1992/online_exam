@@ -1,0 +1,116 @@
+<div class="panel">
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <form method="POST" action="/client/create-client" class="validate-form">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Name</label>
+                                <input type="text" name="name" class="form-control validate-input" id="name"
+                                    aria-describedby="emailHelp" placeholder="Enter name">
+                                <span class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Email</label>
+                                <input type="text" name="email" class="form-control validate-input" id="email"
+                                    aria-describedby="emailHelp" placeholder="Enter email">
+                                <span class="text-danger">
+                                    <%= formError != '' && typeof formError[0].email != 'undefined'  ? formError[0].email : '' %>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <label for="exampleInputAddress1">Address 1</label>
+                                <input type="text" name="address1" class="form-control validate-input"
+                                    id="exampleInputAddress1" aria-describedby="address1Help"
+                                    placeholder="Enter address">
+                                <span class="text-danger">
+                                    <%= formError != '' && typeof formError[0].address1 != 'undefined'  ? formError[0].address1 : '' %>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <label for="exampleInputAddress1">Address 2</label>
+                                <input type="text" name="address2" class="form-control validate-input"
+                                    id="exampleInputAddress2" aria-describedby="address2Help"
+                                    placeholder="Enter address">
+                                <span class="text-danger">
+                                    <%= formError != '' && typeof formError[0].address2 != 'undefined'  ? formError[0].address2 : '' %>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <label for="exampleInputBoard">Board</label>
+                                <select name="board" class="form-control validate-input select-change" id="board1">
+                                    <option value="">Select board..</option>
+                                    <option value="ICSE">ICSE</option>
+                                    <option value="ISC">ISC</option>
+                                    <option value="CBSE">CBSE</option>
+                                    <option value="UP">UP</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <label for="exampleInputCountry">Country</label>
+                                <input type="text" name="country" class="form-control validate-input"
+                                    id="exampleInputCountry" aria-describedby="countryHelp" placeholder="Enter country">
+                                <span class="text-danger">
+                                    <%= formError != '' && typeof formError[0].country != 'undefined'  ? formError[0].country : '' %>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <label for="exampleInputAddress1">State</label>
+                                <input type="text" name="state" class="form-control validate-input"
+                                    id="exampleInputState" aria-describedby="StateHelp" placeholder="Enter State">
+                                <span class="text-danger">
+                                    <%= formError != '' && typeof formError[0].state != 'undefined'  ? formError[0].state : '' %>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <label for="exampleInputCity">City</label>
+                                <input type="text" name="city" class="form-control validate-input" id="exampleInputCity"
+                                    aria-describedby="cityHelp" placeholder="Enter address">
+                                <span class="text-danger">
+                                    <%= formError != '' && typeof formError[0].city != 'undefined'  ? formError[0].city : '' %>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <label for="exampleInputPhone">Phone</label>
+                                <input type="phone" name="phone"
+                                    onkeypress="return event.keyCode >= 48 && event.keyCode <= 57" maxlength="10"
+                                    class="form-control validate-input" id="exampleInputPhone"
+                                    aria-describedby="emailHelp" placeholder="Enter phone">
+                                <span class="text-danger">
+                                    <%= formError != '' && typeof formError[0].phone != 'undefined'  ? formError[0].phone : '' %>
+                                </span>
+                            </div>
+
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

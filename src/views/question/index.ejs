@@ -1,0 +1,54 @@
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="header">
+                        <h4 class="title"><%= title %></h4>
+                    </div>
+                    <div class="content">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <a class="btn btn-info pull-right" href="/question/create">
+                                    Create Question
+                                </a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="grid">
+                                    <table class="table table-striped">
+
+                                        <head>
+                                            <tr>
+                                                <th>Subject</th>
+                                                <th>Question</th>
+                                                <th>Status</th>
+                                                <th>Created At</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </head>
+
+                                        <body>
+                                            <% models.forEach(model => { %>
+                                            <tr>
+                                                <td><%- model.subject_id.name %> </td>
+                                                <td><%- model.question %> </td>
+                                                <td><%- model.status === 1 ? 'Active': 'In Active' %> </td>
+                                                <td>
+                                                    <%- model.createdAt %>
+                                                </td>
+                                                <td></td>
+                                            </tr>
+                                            <% }) %>
+                                        </body>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

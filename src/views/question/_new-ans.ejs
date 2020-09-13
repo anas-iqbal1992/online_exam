@@ -1,0 +1,16 @@
+<div class="row r-ans">
+    <div class="col-lg-10">
+        <div class="form-group">
+            <label>Anwser <%- no %></label>
+            <input type="text" name="answer[]" class="form-control validate-input" id="answer-<%- no %>"
+                placeholder="Enter answer">
+            <span class="text-danger">
+                <%= formError != '' && typeof formError[0].answer != 'undefined'  ? formError[0].answer : '' %>
+            </span>
+        </div>
+    </div>
+    <div class="col-lg-1">
+        <label></label>
+        <a class="btn btn-danger remove-ans">-</a>
+    </div>
+</div>

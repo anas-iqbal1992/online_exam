@@ -1,0 +1,24 @@
+<% if (messages !='') { %>
+<div class="row">
+    <div class="col-lg-12">
+        <div class="alert alert-<%= messages.type %>" role="alert">
+            <strong><%= messages.intro %></strong> <%= messages.message %>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    </div>
+</div>
+<% } %>
+<% if (error != '') { %>
+<div class="row">
+    <div class="col-lg-12">
+        <div class="alert alert-warning" role="alert">
+            <strong>Login</strong> <%= error %>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    </div>
+</div>
+<% } %>

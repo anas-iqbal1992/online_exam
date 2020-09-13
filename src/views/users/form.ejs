@@ -1,0 +1,58 @@
+<div class="panel">
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <form method="POST" action="/users/record" class="validate-form">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Name</label>
+                                <input type="text" name="name" class="form-control validate-input" id="name"
+                                    aria-describedby="emailHelp" placeholder="Enter name">
+                                <span class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Email</label>
+                                <input type="text" name="email" class="form-control validate-input" id="email"
+                                    aria-describedby="emailHelp" placeholder="Enter email">
+                                <span class="text-danger">
+                                    <%= formError != '' && typeof formError[0].email != 'undefined'  ? formError[0].email : '' %> 
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Phone</label>
+                                <input type="phone" name="phone"
+                                    onkeypress="return event.keyCode >= 48 && event.keyCode <= 57" maxlength="10"
+                                    class="form-control validate-input" id="exampleInputEmail1"
+                                    aria-describedby="emailHelp" placeholder="Enter phone">
+                                <span class="text-danger">
+                                    <%= formError != '' && typeof formError[0].phone != 'undefined'  ? formError[0].phone : '' %> 
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <label for="sel1">Role</label>
+                                <select name="role" class="form-control validate-input select-change" id="sel1">
+                                    <% if(user.role == 'superadmin'){ %>
+                                    <option value="">Select roles..</option>
+                                    <option value="admin">Admin</option>
+                                    <% } %>
+                                    <option value="auditor" <%= (user.role == 'admin')? ' selected':'' %>>Auditor</option>
+                                </select>
+                                <span class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

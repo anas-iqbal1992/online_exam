@@ -1,0 +1,67 @@
+<link type="text/css" rel="stylesheet" href="/assets/css/jsgrid.min.css" />
+<link type="text/css" rel="stylesheet" href="/assets/css/jsgrid-theme.min.css" />
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="header">
+                        <h4 class="title"><%= title %></h4>
+                    </div>
+                    <div class="content">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <a class="btn btn-info pull-right" href="/users/create">
+                                    Create User
+                                </a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="grid">
+                                    <table class="table table-striped">
+                                        <head>
+                                            <tr>
+                                                <th>Name</th>
+                                                <th>Email</th>
+                                                <th>Phone</th>
+                                                <th>Role</th>
+                                                <th>Status</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </head>
+
+                                        <body>
+                                            <% users.forEach(user =>{ %>
+                                            <tr>
+                                                <td>
+                                                    <%= user.name %>
+                                                </td>
+                                                <td>
+                                                    <%= user.email %>
+                                                </td>
+                                                <td>
+                                                    <%= user.phone %>
+                                                </td>
+                                                <td>
+                                                    <%= user.role %>
+                                                </td>
+                                                <td>
+                                                    <%= user.status == 1 ? 'Active' : 'InActive' %>
+                                                </td>
+                                                <td>
+                                                    
+                                                </td>
+                                            </tr>
+                                            <% }); %>
+                                        </body>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
